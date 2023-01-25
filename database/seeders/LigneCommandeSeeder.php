@@ -16,8 +16,7 @@ class LigneCommandeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('ligne_commande')->insert([
-            
+        DB::table('ligne_commande')->insert([    
             'quantite'=> 50,
             'id_commande'=>1,
             'id_produit'=>1         
