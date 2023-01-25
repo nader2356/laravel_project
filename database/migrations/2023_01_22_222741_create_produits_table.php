@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
             $table->string('name') ->nullable();
-            $table->float('prix',)->nullable();
+            $table->double('prix',)->nullable();
             $table->integer('quantite') ->nullable();
             $table->integer('id_cat');
         });

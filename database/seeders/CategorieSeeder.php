@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategorieSeeder extends Seeder
@@ -15,8 +17,12 @@ class CategorieSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Produit::class, 10)->create()->each(function ($categorie) {
-            $categorie->categorie()->save(factory(App\Models\Categorie::class)->make());
-        });
+        $name = ['Animalerie', 'Applis et Jeux', 'Beauté & parfums', 'Informatique', 'Sports & Loisirs'];
+
+        DB::table('categories')->insert([
+            'name' => $name[array_rand($name, 1)],
+        ]);
+
+       
     }
 }
