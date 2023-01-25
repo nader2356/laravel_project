@@ -17,7 +17,7 @@ class CategorieSeeder extends Seeder
      */
     public function run()
     {
-        $name = ['Animalerie', 'Applis et Jeux', 'Beauté & parfums', 'Informatique', 'Sports & Loisirs'];
+        $name = array('Animalerie', 'Applis et Jeux', 'Beauté & parfums', 'Informatique', 'Sports & Loisirs');
 
         DB::table('categories')->insert([
             'name' => $name[array_rand($name, 1)],
